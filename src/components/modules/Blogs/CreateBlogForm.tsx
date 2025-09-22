@@ -6,7 +6,7 @@ import Form from "next/form";
 import { useState } from "react";
 
 export default function CreateBlogForm() {
-  const [isFeatured, setIsFeatured] = useState("false");
+  const [IsFeatured, setIsFeatured] = useState("false");
 
   return (
     <Form
@@ -49,7 +49,7 @@ export default function CreateBlogForm() {
         <input
           type="url"
           id="thumbnail"
-          name="thumbnail"
+          name="Thumbnail"
           className="w-full rounded-md border px-3 py-2 focus:ring focus:ring-blue-200"
         />
       </div>
@@ -75,9 +75,9 @@ export default function CreateBlogForm() {
           <label className="flex items-center gap-2">
             <input
               type="radio"
-              name="isFeatured"
+              name="IsFeatured"
               value="true"
-              checked={isFeatured === "true"}
+              checked={IsFeatured === "true"}
               onChange={(e) => setIsFeatured(e.target.value)}
               className="text-blue-600 focus:ring-blue-500"
             />
@@ -86,9 +86,9 @@ export default function CreateBlogForm() {
           <label className="flex items-center gap-2">
             <input
               type="radio"
-              name="isFeatured"
+              name="IsFeatured"
               value="false"
-              checked={isFeatured === "false"}
+              checked={IsFeatured === "false"}
               onChange={(e) => setIsFeatured(e.target.value)}
               className="text-blue-600 focus:ring-blue-500"
             />
