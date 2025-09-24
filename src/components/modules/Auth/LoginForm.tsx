@@ -30,12 +30,16 @@ export default function LoginForm() {
   const onSubmit = async (values: FieldValues) => {
     console.log(values);
     try {
-      const res = await login(values);
-      if (res?.id) {
-        toast.success("use login successfully");
+      //   const res = await login(values);
+      //   if (res?.id) {
+      //     toast.success("use login successfully");
 
-        router.push("/");
-      }
+      //     router.push("/");
+      //   }
+      signIn("credentials", {
+        ...values,
+        callbackUrl: "/dashboard",
+      });
     } catch (error) {
       console.log(error);
     }

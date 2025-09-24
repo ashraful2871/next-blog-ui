@@ -1,12 +1,14 @@
 "use server";
 
+import { getUserSession } from "@/halpers/getUserSession";
 import { revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 
 export const create = async (data: FormData) => {
+  const session = await getUserSession();
   const blogInfo = Object.fromEntries(data.entries());
   const modifiedBlog = {
-    authorId: 1,
+    authorId: session?.user.id,
     title: blogInfo.title,
     content: blogInfo.content,
     Thumbnail: blogInfo.Thumbnail,

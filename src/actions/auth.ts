@@ -15,6 +15,7 @@ export const register = async (data: FieldValues) => {
   return await res.json();
 };
 export const login = async (data: FieldValues) => {
+  console.log(data);
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/login`, {
     method: "POST",
     headers: {
