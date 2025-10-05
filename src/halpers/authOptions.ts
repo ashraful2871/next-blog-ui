@@ -1,6 +1,6 @@
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { NextAuthOptions } from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
 
 declare module "next-auth" {
   interface Session {
@@ -105,3 +105,5 @@ export const authOptions: NextAuthOptions = {
     signIn: "/login",
   },
 };
+
+export default NextAuth(authOptions);
